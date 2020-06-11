@@ -46,8 +46,11 @@ let string = `/* 你好，我是一名前端新人
     background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 100%, rgba(0,0,0,1) 100%);
 }
 /* 让八卦动起来 */
-#divWrapper{
+#div1{
   animation: x 10s infinite linear;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-overflow-scrolling:touch;  
 }
 @keyframes x{
   from{
@@ -76,8 +79,8 @@ let step = () => {
     // 如果不是回车就照搬
     html.innerHTML = string2;
     style.innerHTML = string.substring(0, n);
-    window.scrollTo(0, 1300);
-    html.scrollTo(0, 1300);
+    window.scrollTo(0, 9999);
+    html.scrollTo(0, 9999);
     if (n < string.length - 1) {
       // 如果 n 不是最后一个就继续
       n += 1;
